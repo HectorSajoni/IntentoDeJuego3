@@ -1,0 +1,28 @@
+{
+  "name": "2_sockets_basicos",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.15.2",
+    "install": "^0.8.8",
+    "nodemon": "^2.0.20",
+    "socket.io": "^1.7.2"
+  },
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HectorSajoni/Sockets-Chat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HectorSajoni/Sockets-Chat/issues"
+  },
+  "homepage": "https://github.com/HectorSajoni/Sockets-Chat#readme",
+  "description": ""
+}

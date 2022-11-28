@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Servidor</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    </head>
+</head>
+<body class="estrecho">
+    <h1 class="centrar">Resultados</h1><br>
+    <table class="table table-dark table-hover" id="tabla">
+        <tr>
+            <th>Nombre del jugador</th>
+            <th>Enemigos liquidados</th>
+            <th>Tiempo en segundos</th>
+        </tr>
+    </table>
+    <br>
+    <a href="index.html"><button class="btn btn-warning">Volver</button></a>
+
+    <script src="socket.io.js"></script>
+    <script>
+        var socket = io();
+        let tabla = document.getElementById('tabla');
+        
+        socket.on('juego-terminado', function (data) 
+        {    
+            tabla.innerHTML +=
+                `<tr>
+                    <th>${data.usuario}</th>
+                    <th>${data.enemigos}</th>
+                    <th>${data.segundos}</th>
+                </tr>`
+        });
+    </script>
+</body>
+</html>
